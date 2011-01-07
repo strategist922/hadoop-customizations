@@ -1,0 +1,30 @@
+README
+======
+
+This is a grab bag of backports of various Hadoop/Avro/HBase/etc. classes for use
+with CDH3.
+
+They have been packaged under a different namespace and in some cases renamed so
+as to not conflict with existing classes.
+
+
+Patches
+=======
+
+HBASE-1861 - Multi-Family support for bulk upload tools
+--------------------------------------------------------
+https://issues.apache.org/jira/browse/HBASE-1861
+
+This patch is imported and has the package and classnames changed.
+
+AVRO-593 - Avro mapreduce apis incompatible with hadoop 0.20.2
+--------------------------------------------------------------
+https://issues.apache.org/jira/browse/AVRO-593
+
+This was necessary as the HFileOutputFormat uses the newer .mapreduce
+API and we have Avro container files as our input files.  
+
+The AvroInputFormat available in avro-1.4.1 is for the .mapred API.
+
+This patch is imported and has the package changed.
+
